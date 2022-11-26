@@ -2,7 +2,7 @@
 title: 'Week 12: Ethics, Confounding, and Study Designs'
 subtitle: 'From a Final Exam about Olympics and Cheating'
 author: "Scott Schwartz"
-date: "May 18, 2021"
+date: "Nov 28, 2022"
 output:
   beamer_presentation:
     theme: Pittsburgh
@@ -68,7 +68,7 @@ download.file(url = "https://www.wada-ama.org/sites/default/files/styles/fullscr
 Performance enhancing drugs (PEDs) controversy is not uncommon for Olympic athletes.  The World Anti-Doping Agency (WADA) -- based in Montreal, Quebec -- is tasked by the Olympic committee to establish and enforce PED policies; and, ["The agency's key activities include scientific research."](https://en.wikipedia.org/wiki/World_Anti-Doping_Agency)
 
 \vspace{.15cm}
-Routine testing data collected by WADA can be used to study the violation rates with respect to sports and countries. WADA scientists are also ideally placed to study human health and exercise performance.  WADA sponsored scientific studies are publicly available through official WADA publications, media outlets interviewing WADA scientists and reporting their results, and in peer-reviewed scientific journals. 
+Routine testing and data collected by WADA can be used to study the violation rates with respect to sports and countries. WADA scientists are also ideally placed to study human health and exercise performance.  WADA sponsored scientific studies are publicly available through official WADA publications, media outlets interviewing WADA scientists and reporting their results, and in peer-reviewed scientific journals. 
 
 ::::
 :::
@@ -126,7 +126,7 @@ I don't know why I use this
 as the example, it's very
 
 \vspace{.1cm}
-Pretty violent
+-- Pretty violent
 
 \vspace{.1cm}
 But it's kind of an...
@@ -193,7 +193,7 @@ morally but not ethically
 Data science gains new insights by tying together existing disconnected data sets
 
 \vspace{-.5em}
-- For publicly available data this generally received very little formal review
+- For publicly available data this generally receives very little formal review
 
 
 \begin{block}{As ethical Statisticians and Data Scientists it is mostly up to us to:}
@@ -264,14 +264,14 @@ I, the [ethical web scraper](https://towardsdatascience.com/ethics-in-web-scrapi
 - If you have a public API that provides the data I’m looking for, I’ll use it and avoid scraping all together.
 - I will always provide a User Agent string that makes my intentions clear and provides a way for you to 
 contact me with questions or concerns.
-- I will request data at a reasonable rate. I will strive to never be confused for a DDoS attack.
+- I will request data at a reasonable rate. I will strive to never be confused for a DDoS (distributed denial of service) attack.
 - I will only save the data I absolutely need from your page. If all I need it OpenGraph meta-data, that’s 
 all I’ll keep.
 - I will respect any content I do keep. I’ll never pass it off as my own.
 - I will look for ways to return value to you. Maybe I can drive some (real) traffic to your site or credit 
 you in an article or post.
-- I will respond in a timely fashion to your outreach and work with you towards a resolution.
-- I will scrape for the purpose of creating new value from the data, not to duplicate it.
+- I will respond in a timely fashion to your outreach and work with you towards a resolution should you contact me with an issue.
+- I will scrape for the purpose of creating new value from the data, not just to duplicate data.
 
 ## APIs
 
@@ -320,7 +320,7 @@ opportunity to ask questions and to withdraw at any time from the research.
 
 - **Comprehension**: The manner and context in which information is conveyed is as 
 important as the information itself. For example, presenting information in a 
-disorganized or rapid manner (with too little time to think about it or ask questions), 
+disorganized or rapid manner (with too little time to think about it or ask questions) 
 may limit a participant's ability to make an informed choice.
 
 - **Voluntariness**: Agreement to participate in research constitutes valid consent only 
@@ -415,7 +415,7 @@ handled, analyzed, or shared by researchers and medical care providers.
 When answering, address two specific ethical research principles of free and informed consent that you feel are the most relevant to your conclusion(s), as well as your rationale for the conclusion you've come to about them.
 
 \vspace{.15cm}
-You are not expected to come a "correct conclusion" in this question; rather, you will be graded based on identifying relevant principles of free and informed consent and considering them with respect to the prompt in a sensible manner that demonstrates that you understand them.
+You are not expected to come a "correct conclusion" in this question; rather, your mark will be based on your identification of relevant principles of free and informed consent and whether or not your considerations about them demonstrate that you understand them and can reason about them in a sensible manner. 
 
 \vspace{.15cm}
 \end{block}
@@ -440,7 +440,7 @@ To gain support for their work (and help recover from a "recent scandal" regardi
 ### Algorithms are opinions wrapped in code that can make decisions
 
 - What does transparency mean for (possibly proprietary) algorithms? 
-- Whhat does it mean for an algorithm to have built-in biases?
+- What does it mean for an algorithm to have built-in biases?
 - What does it mean when an algorithm makes the final decision?
 
 ### What would you share about a Decision Tree or a Linear Regression Model?
@@ -541,6 +541,41 @@ Which of the following statements responding to this do you most agree with?
 \item[D. ] Showing that countries with more historical PED violations don't have more medals is strong evidence that PEDs don't matter
 \end{enumerate}
 
+## Case-Control, Prospective, and Retrospective
+
+\begin{minipage}{.6\textwidth}
+\includegraphics[trim=0 385 0 0, clip]{images/retroprospect.png}
+\end{minipage}
+\begin{minipage}{.39\textwidth}
+\includegraphics[trim=0 0 233 945, clip]{images/retroprospect.png}
+
+\vspace{1em}
+
+\begin{itemize}
+\setlength\itemsep{1em}
+
+\item \textbf{Case-Control Study}:
+
+      observed outcomes are paired
+
+\item \textbf{Prospective Cohort Study}:
+
+      outcomes not yet observed
+
+\item \textbf{Retrospective Cohort}:
+  
+      outcomes have been observed
+\end{itemize}
+
+
+\end{minipage}
+
+
+```{r, eval=FALSE, include=FALSE}
+download.file(url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ExplainingCaseControlSJW-en.svg/1024px-ExplainingCaseControlSJW-en.svg.png",
+              destfile = "images/retroprospect.png", mode = 'wb')
+```
+
 ## Study Designs
 
 **Longitudinal** studies take *repeated measurements* at *multiple time points*; whereas, **Cross-Sectional** 
@@ -592,40 +627,6 @@ studies collect a "snapshot" of data only at a *single time point* (although the
 
 "Good" and "Bad" observed outcomes are paired; then, exposure difference are examined
 
-## Case-Control, Prospective, and Retrospective
-
-\begin{minipage}{.6\textwidth}
-\includegraphics[trim=0 385 0 0, clip]{images/retroprospect.png}
-\end{minipage}
-\begin{minipage}{.39\textwidth}
-\includegraphics[trim=0 0 233 945, clip]{images/retroprospect.png}
-
-\vspace{1em}
-
-\begin{itemize}
-\setlength\itemsep{1em}
-
-\item \textbf{Case-Control Study}:
-
-      observed outcomes are paired
-
-\item \textbf{Prospective Cohort Study}:
-
-      outcomes not yet observed
-
-\item \textbf{Retrospective Cohort}:
-  
-      outcomes have been observed
-\end{itemize}
-
-
-\end{minipage}
-
-
-```{r, eval=FALSE, include=FALSE}
-download.file(url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/ExplainingCaseControlSJW-en.svg/1024px-ExplainingCaseControlSJW-en.svg.png",
-              destfile = "images/retroprospect.png", mode = 'wb')
-```
 
 
 ## So observational studies are hopeless?
@@ -639,18 +640,6 @@ download.file(url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/E
 :::columns
 ::::column
 
-### Bradford Hill criteria
-
-| | |
-|-|-|
-| Strength of association | Consistency |
-| Specificity | Temporality | 
-| Biological gradient | Plausibility | 
-| Coherence | Experiment |
-| Analogy |
-
-::::
-::::column
 
 \vspace{.75em}
 
@@ -661,6 +650,19 @@ causation?"
 - Fedak et al (2015) "Applying the Bradford Hill criteria in the 
 21st century: how data integration has changed causal 
 inference in molecular epidemiology"
+
+::::
+::::column
+
+### Bradford Hill criteria
+
+| | |
+|-|-|
+| Strength of association | Consistency |
+| Specificity | Temporality | 
+| Biological gradient | Plausibility | 
+| Coherence | Experiment |
+| Analogy |
 
 ::::
 :::
@@ -693,3 +695,16 @@ Continuing the previous example, suppose WADA scientists decided to review long 
 \item[C. ] Randomized controlled trial 
 \item[D. ] Retrospective cohort study 
 \end{enumerate}
+
+## Good job
+
+\Huge 
+
+You've reached the end
+
+- of these slides
+- of STA130 lectures
+
+\normalsize
+
+(but we'll have a review class for the final next Monday during normal class time)
